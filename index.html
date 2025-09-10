@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube to MP3 Extractor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toastNotification"></div>
+
+  <div class="container">
+    <h1>🚀 YouTube to MP3 Extractor</h1>
+    <div class="input-container">
+      <input type="text" id="urlInput" placeholder="Paste YouTube link..." required />
+      <button onclick="fetchVideoInfo()">Extract</button>
+    </div>
+
+    <div id="detailsContainer" style="display: none;">
+      <div id="skeletonLoader">
+          <div class="skeleton skeleton-thumbnail"></div>
+          <div class="skeleton-info">
+              <div class="skeleton skeleton-text"></div>
+              <div class="skeleton skeleton-text short"></div>
+              <div class="skeleton skeleton-buttons"></div>
+          </div>
+      </div>
+      <div id="detailsContent" style="display: none;">
+          <img id="thumbnail" src="" alt="Video Thumbnail">
+          <div class="info">
+              <h3 id="videoTitle"></h3>
+              <p id="videoArtist"></p>
+              <div id="qualityButtons"></div>
+              <button id="previewButton" onclick="startPreview()">Preview</button>
+              <div id="progressContainer" class="progress-container" style="display: none;">
+                  <div id="progressFill" class="progress-fill"></div>
+              </div>
+          </div>
+      </div>
+    </div>
+    
+    <div id="libraryContainer">
+        <h3>Preview Library</h3>
+        <hr>
+        <div id="downloadsList">
+            <p>No previews loaded yet.</p>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Carnage Sentinels</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
